@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <form novalidate [formGroup]="imageForm" (ngSubmit)="onSubmit()">
+          <fieldset>
+            
+            <div class="form-group">
+              <label>Id</label>
+              <input type="text" class="form-control" formControlName="id" disabled>
+            </div>
+            <div class="form-group">
+              <label>Type</label>
+              <input type="text" class="form-control" formControlName="type">
+            </div>
+            <div class="form-group">
+              <label>Product_id</label>
+              <input type="text" class="form-control" formControlName="product_id" value="{{id_prodForm}}" disabled>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary" [disabled]="!imageForm.valid">Save</button>
+          <button type="button" class="btn btn-warning" (click)="redirectImagetPage()">Cancel</button>
+          <pre>{{imageForm.value | json}}</pre>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
